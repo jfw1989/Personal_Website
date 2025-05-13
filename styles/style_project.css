@@ -92,6 +92,10 @@
     box-shadow: 0 0 20px var(--card-shadow-hover);
 }
 
+.modal-content p:last-child {
+    margin-top: 1rem;
+}
+
 .close {
     position: absolute;
     top: 1rem;
