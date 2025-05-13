@@ -1,10 +1,10 @@
 :root {
     --light-bg: #f5f5f7;
-    /*--dark-bg: #161D2F;*/
-    --dark-bg: rgb(22,29,47);
+    --dark-bg: #161d2f;
+    /*--dark-bg: rgb(22,29,47);*/
     --text-light: #1c1c1e;
     --text-dark: #f5f5f7;
-    --accent: #3b4a7c;
+    --accent: #a18bcc;
     --accent-hover: #56669b;
     --accent-alt: #a18bcc;
     --font-sans:
