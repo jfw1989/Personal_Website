@@ -1,12 +1,12 @@
 :root {
-    --accent: #3b4a7c;
-    --accent-hover: #56669b;
+    --accent: #4f8cc9;
+    --accent-hover: #6da0e6;
     --accent-alt: #a18bcc;
-    --text-dark: #1c1c1e;
-    --text-light: #f5f5f7;
-    --card-bg: #ffffff;
+    --text-light: #1c1c1e;
+    --text-dark: #f5f5f7;
+    --card-bg: #fff;
     --card-border: #ddd;
-    --card-shadow: rgba(59, 74, 124, 0.1);
+    --card-shadow: rgba(22,29,47,0.1);
     --card-shadow-hover: rgba(161, 139, 204, 0.2);
 }
 
