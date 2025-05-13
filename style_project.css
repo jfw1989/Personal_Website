@@ -1,0 +1,116 @@
+:root {
+    --accent: #3b4a7c;
+    --accent-hover: #56669b;
+    --accent-alt: #a18bcc;
+    --text-dark: #1c1c1e;
+    --text-light: #f5f5f7;
+    --card-bg: #ffffff;
+    --card-border: #ddd;
+    --card-shadow: rgba(59, 74, 124, 0.1);
+    --card-shadow-hover: rgba(161, 139, 204, 0.2);
+}
+
+.project-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.project-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    cursor: pointer;
+    color: var(--text-dark);
+    box-shadow: 0 0 10px var(--card-shadow);
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 16px var(--card-shadow-hover);
+    border-color: var(--accent-alt);
+}
+
+.project-card h3 {
+    margin-bottom: 0.5rem;
+    color: var(--accent);
+}
+
+.project-card p {
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+    color: #4d4d4d;
+}
+
+.status {
+    display: inline-block;
+    padding: 0.3rem 0.6rem;
+    font-size: 0.8rem;
+    border-radius: 0.3rem;
+    font-weight: bold;
+}
+
+.status.ongoing {
+    background-color: var(--accent);
+    color: #fff;
+}
+
+.status.finished {
+    background-color: #eee;
+    color: #555;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(59, 74, 124, 0.3);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+}
+
+.modal-content {
+    background-color: #f5f5f7;
+    color: var(--text-dark);
+    margin: 5% auto;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    width: 90%;
+    max-width: 600px;
+    position: relative;
+    box-shadow: 0 0 20px var(--card-shadow-hover);
+}
+
+.close {
+    position: absolute;
+    top: 1rem;
+    right: 1.2rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--accent);
+}
+
+pre {
+    background: #f0f0f5;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    overflow-x: auto;
+    font-size: 0.9rem;
+    color: var(--text-dark);
+    border: 1px solid #ddd;
+}
+
+.code {
+    white-space: pre-wrap;
+}
