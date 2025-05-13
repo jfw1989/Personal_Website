@@ -82,7 +82,7 @@
 
 .modal-content {
     background-color: #f5f5f7;
-    color: var(--text-dark);
+    color: var(--text-light);
     margin: 5% auto;
     padding: 2rem;
     border-radius: 0.5rem;
