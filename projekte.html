@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Meine Projekte</title>
+        <link rel="stylesheet" href="styles/style.css" />
+        <link rel="stylesheet" href="styles/style_project.css" />
+        <!-- PrismJS für Syntax Highlighting -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.min.css"
+        />
+    </head>
+    <body>
+        <nav id="navbar">
+            <div class="logo">Jan-Frederic Wuttke</div>
+            <ul>
+                <li><a href="index.html#about">Über mich</a></li>
+                <li><a href="index.html#resume">Lebenslauf</a></li>
+                <li><a href="#projekte">Projekte</a></li>
+                <li><a href="index.html#contact">Kontakt</a></li>
+            </ul>
+        </nav>
+
+        <section class="hero">
+            <h1>Meine Projekte</h1>
+            <p>
+                Eine Auswahl technischer Projekte, die ich in meiner Freizeit
+                umgesetzt habe
+            </p>
+        </section>
+
+        <section id="projekte" class="section light">
+            <div class="content">
+                <h2>Projekte</h2>
+                <div class="project-gallery">
+                    <div class="project-card" onclick="openModal('project1')">
+                        <h3>Smart Home mit Home Assistant & Node-Red</h3>
+                        <p>
+                            Komplexe Automationen, Präsenzlogik und
+                            Zeitsteuerung mit JavaScript in Node-Red.
+                        </p>
+                        <span class="status ongoing">In Bearbeitung</span>
+                    </div>
+                    <div class="project-card" onclick="openModal('project2')">
+                        <h3>Heimserver & Netzwerkstruktur</h3>
+                        <p>
+                            Docker-Anwendungen wie Traefik, CrowdSec und weitere
+                            Dienste aufgesetzt und verwaltet.
+                        </p>
+                        <span class="status ongoing">In Bearbeitung</span>
+                    </div>
+                    <div class="project-card" onclick="openModal('project3')">
+                        <h3>Nextcloud Instanz</h3>
+                        <p>
+                            Selbst gehostete Cloudlösung mit TLS, Reverse Proxy,
+                            Kalender-Integration etc.
+                        </p>
+                        <span class="status finished">Abgeschlossen</span>
+                    </div>
+                    <div class="project-card" onclick="openModal('project4')">
+                        <h3>Backup-Server</h3>
+                        <p>
+                            Kompakte Lösung zur Datensicherung für meinen
+                            Heimserver, basierend auf Linux und rsync.
+                        </p>
+                        <span class="status finished">Abgeschlossen</span>
+                    </div>
+                    <div class="project-card" onclick="openModal('project5')">
+                        <h3>Diese Website</h3>
+                        <p>
+                            Eigenständig mit HTML, CSS und einem
+                            minimalistischen, modernen Design umgesetzt.
+                        </p>
+                        <span class="status ongoing">In Bearbeitung</span>
+                    </div>
+                </div>
+                <div class="popup">
+                    <div id="project1" class="modal">
+                        <div class="modal-content">
+                            <span class="close" onclick="closeModal('project1')"
+                                >&times;</span
+                            >
+                            <h3>Smart Home mit Home Assistant & Node-Red</h3>
+                            <p>
+                                Ziel war es, mein Zuhause automatisiert,
+                                effizient und datenschutzfreundlich zu steuern.
+                                Mit Node-Red habe ich individuelle Präsenz- und
+                                Lichtsteuerungen umgesetzt, die auf
+                                Sensorwerten, Tageszeit und Gewohnheiten
+                                reagieren.
+                            </p>
+
+                            <p>
+                                <strong>Technologien:</strong> Home Assistant,
+                                Node-Red, JavaScript, MQTT, Thread
+                            </p>
+
+                            <p>
+                                <strong>Beispiel-Flow (Node-Red):</strong>
+                            </p>
+                            <pre><code class="language-javascript">
+// Multiroom Lautsprecher Automation
+let zonePlayer = flow.get(msg.topic);
+let playingStates = [flow.get("Arbeitszimmer").state, flow.get("Küche").state, flow.get("Schlafzimmer").state, flow.get("Wohnzimmer").state];
+let index;
+let player;
+
+let messages = [null, null];
+
+if (zonePlayer.state != "playing") {
+    if (playingStates.includes("playing")) {
+        index = playingStates.indexOf("playing");
+        if (index == 0) {
+            player = "Arbeitszimmer";
+        } else if (index == 1) {
+            player = "Küche";
+        } else if (index == 2) {
+            player = "Schlafzimmer";
+        } else if (index == 3) {
+            player = "Wohnzimmer";
+        }
+        messages[0] = { playerName: msg.topic, payload: flow.get(player).coordinator };
+    }
+}
+
+if (zonePlayer.volume < 16) {
+    zonePlayer.volume = 16;
+    messages[1] = { playerName: msg.topic, payload: zonePlayer.volume };
+} else if (zonePlayer.volume > 40) {
+    zonePlayer.volume = 40;
+    messages[1] = { playerName: msg.topic, payload: zonePlayer.volume };
+}
+
+return messages;
+                                    </code></pre>
+                            <!-- <p>
+                                <strong>GitHub & Ressourcen:</strong><br />
+                                <a
+                                    href="https://github.com/deinbenutzername/smarthome-flows"
+                                    target="_blank"
+                                >
+                                    GitHub Repository – Smart Home Flows
+                                </a>
+                            </p> -->
+                            <p>
+                                <strong>Status:</strong>
+                                <span class="status ongoing"
+                                    >In Bearbeitung</span
+                                >
+                            </p>
+                        </div>
+                    </div>
+                    <div id="project2" class="modal">
+                        <div class="modal-content">
+                            <span class="close" onclick="closeModal('project2')"
+                                >&times;</span
+                            >
+                            <h3>Heimserver & Netzwerkstruktur</h3>
+                            <p>
+                                Einrichtung eines zentralen Ubuntu-Heimservers
+                                mit Fokus auf Containerisierung, Sicherheit und
+                                Management per Reverse Proxy. Dienste wie
+                                Traefik, CrowdSec und Watchtower werden
+                                automatisiert orchestriert.
+                            </p>
+                            <p>
+                                <strong>Technologien:</strong> Ubuntu Server,
+                                Docker, Docker Compose, Traefik, CrowdSec,
+                                Technitium DNS, SSH
+                            </p>
+                            <p>
+                                <strong>Status:</strong>
+                                <span class="status ongoing"
+                                    >In Bearbeitung</span
+                                >
+                            </p>
+                        </div>
+                    </div>
+                    <div id="project3" class="modal">
+                        <div class="modal-content">
+                            <span class="close" onclick="closeModal('project3')"
+                                >&times;</span
+                            >
+                            <h3>Nextcloud Instanz</h3>
+                            <p>
+                                Eigene Nextcloud-Instanz mit automatischem
+                                TLS-Zertifikat, CalDAV/CardDAV-Anbindung und
+                                Reverse-Proxy-Anbindung via Traefik. Der Fokus
+                                lag auf Datenschutz, Verfügbarkeit und nahtloser
+                                Integration in den Alltag.
+                            </p>
+                            <p>
+                                <strong>Technologien:</strong> Nextcloud,
+                                Traefik, Let's Encrypt, CrowdSec, Cloudflare
+                            </p>
+                            <p>
+                                <strong>Status:</strong>
+                                <span class="status finished"
+                                    >Abgeschlossen</span
+                                >
+                            </p>
+                        </div>
+                    </div>
+                    <div id="project4" class="modal">
+                        <div class="modal-content">
+                            <span class="close" onclick="closeModal('project4')"
+                                >&times;</span
+                            >
+                            <h3>Backup-Server</h3>
+                            <p>
+                                Konzeption und Einrichtung eines dedizierten
+                                Backup-Servers unter Ubuntu zur inkrementellen
+                                Sicherung mittels Tanya und rsync. Der Server
+                                führt zeitgesteuerte Backups aus und lagert
+                                diese verschlüsselt aus.
+                            </p>
+                            <p>
+                                <strong>Technologien:</strong> Ubuntu, Tanya,
+                                rsync, cron, Bash, SSH
+                            </p>
+                            <p><strong>Code-Beispiel (Cronjob):</strong></p>
+                            <pre><code class="language-bash">
+0 3 * * MON rsync -e "sudo -u username ssh" -aAXv --delete / --exclude={"/dev/*","/proc/*","/sys/*","/tmp/*","/run/*","/mnt/*","/media/*","/lost+found"} backup_server:/mnt/backup-drive
+                                        </code></pre>
+                            <p>
+                                <strong>Status:</strong>
+                                <span class="status finished"
+                                    >Abgeschlossen</span
+                                >
+                            </p>
+                        </div>
+                    </div>
+                    <div id="project5" class="modal">
+                        <div class="modal-content">
+                            <span class="close" onclick="closeModal('project5')"
+                                >&times;</span
+                            >
+                            <h3>Diese Website</h3>
+                            <p>
+                                Minimalistische Portfolio-Website zur
+                                Darstellung meines Werdegangs, meiner Projekte
+                                und meines „Wegs vom Sport zur IT“. Komplett
+                                selbst mit HTML, CSS und etwas JavaScript
+                                umgesetzt – ohne CMS oder Frameworks.
+                            </p>
+                            <p>
+                                <strong>Technologien:</strong> HTML5, CSS3,
+                                JavaScript, Responsive Design, Prism.js
+                            </p>
+                            <p><strong>Code-Beispiel (CSS-Auszug):</strong></p>
+                            <pre><code class="language-css">
+:root {
+    --light-bg: #f5f5f7;
+    --dark-bg: #1c1c1e;
+    --text-light: #1c1c1e;
+    --text-dark: #f5f5f7;
+    --accent: #4a90e2; /* Primary Color */
+    --accent-hover: #357ab7;
+    --font-sans:
+        -apple-system, BlinkMacSystemFont, “Segoe UI”, Roboto, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-sans);
+    line-height: 1.6;
+    color: var(--text-light);
+    background: var(--light-bg);
+    scroll-behavior: smooth;
+}
+                            </code></pre>
+                            <p>
+                                <strong>Status:</strong>
+                                <span class="status ongoing"
+                                    >In Bearbeitung</span
+                                >
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <a href="index.html#projects" class="section button"
+                    >Zurück zur Übersicht</a
+                >
+            </div>
+        </section>
+        <footer>
+            <p>&copy; 2025 Jan-Frederic Wuttke</p>
+        </footer>
+    </body>
+    <script src="navbar.js"></script>
+    <script>
+        function openModal(id) {
+            document.getElementById(id).style.display = "block";
+        }
+        function closeModal(id) {
+            document.getElementById(id).style.display = "none";
+        }
+
+        //Registriert eine Funktion, die bei jedem Klick irgendwo auf der Seite ausgelöst wird.
+        window.onclick = function (event) {
+            document.querySelectorAll(".modal").forEach((modalElement) => {
+                //event.target -> Gibt das HTML-Element zurück, auf das tatsächlich geklickt wurde.
+                if (event.target == modalElement) {
+                    modalElement.style.display = "none";
+                }
+            });
+        };
+    </script>
+    <!-- PrismJS für Syntax Highlighting -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-javascript.min.js"></script>
+</html>

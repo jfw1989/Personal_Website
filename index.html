@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Jan-Frederic Wuttke</title>
+        <link rel="stylesheet" href="styles/style.css" />
+        <style>
+            .about-hero .about-grid {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 4rem;
+                flex-wrap: wrap;
+            }
+
+            .about-hero .about-text {
+                flex: 1;
+                min-width: 280px;
+            }
+
+            .about-hero .about-photo img {
+                width: 320px;
+                max-width: 100%;
+                height: auto;
+                border-radius: 12px;
+                box-shadow: 0 0 12px var(--accent);
+                border: none;
+            }
+        </style>
+        <link
+            rel="stylesheet"
+            href="https://use.fontawesome.com/releases/v6.7.2/css/all.css"
+        />
+    </head>
+    <body>
+        <header class="hero" id="home">
+            <nav id="navbar">
+                <div class="logo">Jan-Frederic Wuttke</div>
+                <ul>
+                    <li><a href="#about">Über mich</a></li>
+                    <li><a href="#resume">Lebenslauf</a></li>
+                    <li><a href="#projects">Projekte</a></li>
+                    <li><a href="#contact">Kontakt</a></li>
+                </ul>
+            </nav>
+            <div class="hero-content">
+                <h1>
+                    Ich gestalte die Schnittstelle zwischen Sport & Technologie
+                </h1>
+                <p>Studioleiter. Performance Coach. Tech-Enthusiast.</p>
+            </div>
+        </header>
+        <section id="about" class="section light about-hero">
+            <div class="about-grid">
+                <div class="about-text">
+                    <h2>Über mich</h2>
+                    <p>
+                        Ich bin Leidenschaftlicher Technik-Enthusiast mit über
+                        10 Jahren Erfahrung in der Leitung, Analyse und
+                        Weiterentwicklung digital gestützter Trainingsprozesse.
+                        Mein Ziel: Die digitale Transformation von
+                        Organisationen aktiv mitgestalten und Menschen dabei
+                        begleiten. Dabei bringe ich umfangreiche Erfahrung im
+                        Umgang mit computergestützten Systemen,
+                        Trainingssoftware, Wearables und KI-Tools im
+                        Gesundheits- und Leistungssportbereich mit.
+                    </p>
+                </div>
+                <div class="about-photo">
+                    <img src="images/jfw.jpg" alt="Portrait Jan-Frederic" />
+                </div>
+            </div>
+        </section>
+        <section id="resume" class="section dark">
+            <div class="content">
+                <h2>Lebenslauf</h2>
+                <div class="resume-grid">
+                    <div class="resume-item">
+                        <h3>
+                            <i class="fa-solid fa-user-tie"></i> Berufserfahrung
+                        </h3>
+                        <p>
+                            <strong>SG Weinstadt e.V. – seit 2024</strong><br />
+                            Studioleitung mit 70+ Mitarbeitenden,
+                            Digitalisierung & computergestützte
+                            Trainingssysteme.
+                        </p>
+                    </div>
+                    <div class="resume-item">
+                        <h3>
+                            <i class="fa-solid fa-dumbbell"></i> Coaching &
+                            Training
+                        </h3>
+                        <p>
+                            Athletiktrainer & Personaltrainer<br />
+                            u.a. Stuttgart Reds (Baseball), Stuttgart Scorpions
+                            (American Football), VfB Stuttgart, WTB (Tennis).
+                        </p>
+                    </div>
+
+                    <div class="resume-item">
+                        <h3><i class="fa-solid fa-cogs"></i> Tech Know How</h3>
+                        <p>
+                            Linux, Docker, Programmierung (Python, JavaScript,
+                            HTML/CSS), Netzwerktechnologie, Reverse Proxy
+                            (Traefik, npm), CrowdSec, Smart Home (Node-RED, Home
+                            Assistant), n8n.
+                        </p>
+                    </div>
+
+                    <div class="resume-item">
+                        <h3>
+                            <i class="fa-solid fa-vr-cardboard"></i> Projekte &
+                            Interessen
+                        </h3>
+                        <p>
+                            VR-Fitness, Wearables, Dashboards, Aufbau eines
+                            YouTube-Kanals zur Digitalisierung im Sport.
+                        </p>
+                    </div>
+                    <div class="resume-item">
+                        <h3>
+                            <i class="fa-solid fa-graduation-cap"></i>
+                            Ausbildung
+                        </h3>
+                        <p>
+                            B.Sc. Sportwissenschaft (2024), Staatl. gepr. Sport-
+                            & Gymnastiklehrer (2016).
+                        </p>
+                    </div>
+
+                    <div class="resume-item">
+                        <h3>
+                            <i class="fa-solid fa-certificate"></i> Lizenzen
+                        </h3>
+                        <p>CFSC Level 2, FMS Level 1, weitere auf Anfrage.</p>
+                    </div>
+                </div>
+                <a href="lebenslauf.html" class="section button"
+                    >Vollständigen Lebenslauf ansehen</a
+                >
+            </div>
+        </section>
+        <section id="projects" class="section light">
+            <div class="content">
+                <h2>Projekte & Highlights</h2>
+                <ul class="project-list">
+                    <li>Smart Home mit Home Assistant & Node-Red</li>
+                    <li>
+                        Heimserver & Netzwerkstruktur mit Traefik, CrowdSec &
+                        VLANs
+                    </li>
+                    <li>
+                        Selbst gehostete Nextcloud Instanz mit TLS, Reverse
+                        Proxy, Kalender-Integration etc.
+                    </li>
+                    <li>Backup-Server zur Datensicherung für den Heimserver</li>
+                    <li>
+                        Persönliche Website mit Lebenslauf und Präsentation
+                        eigener Projekte
+                    </li>
+                </ul>
+                <a href="projekte.html" class="button">Mehr erfahren</a>
+            </div>
+        </section>
+        <section id="contact" class="section dark">
+            <div class="content">
+                <h2>Kontakt & Zusammenarbeit</h2>
+                <p>
+                    Ich bin offen für spannende Projekte, neue Impulse oder
+                    gemeinsame Entwicklungen.
+                </p>
+                <a href="mailto:jf.wuttke@t-online.de" class="section button"
+                    >E-Mail senden</a
+                >
+            </div>
+        </section>
+        <footer>
+            <p>&copy; 2025 Jan-Frederic Wuttke</p>
+        </footer>
+    </body>
+    <script src="navbar.js"></script>
+</html>
