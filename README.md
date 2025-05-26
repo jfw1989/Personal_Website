@@ -21,7 +21,7 @@ Die Website enthält:
 ## Hosting
 
 Die Website wird über **GitHub Pages** gehostet und ist öffentlich erreichbar unter:  
-[https://jfw1989.github.io/Personal_Website/](https://jfw1989.github.io/Personal_Website/)
+[https://www.jf-wuttke.com](https://www.jf-wuttke.com)
 
 ## Nutzung
 
