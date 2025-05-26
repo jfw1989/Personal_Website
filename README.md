@@ -22,10 +22,3 @@ Die Website enthält:
 
 Die Website wird über **GitHub Pages** gehostet und ist öffentlich erreichbar unter:  
 [https://www.jf-wuttke.com](https://www.jf-wuttke.com)
-
-## Nutzung
-
-Du kannst dieses Repository klonen, um es lokal zu testen oder eigene Anpassungen vorzunehmen:
-
-```bash
-git clone https://github.com/jfw1989/Personal_Website.git
